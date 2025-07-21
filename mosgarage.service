@@ -1,5 +1,5 @@
 [Unit]
-Description=fox4-server
+Description=mosgarage-server
 #Wants=network.target
 After=network.target
 
@@ -10,7 +10,7 @@ Type=idle
 Restart=on-failure
 #ExecStartPre=/bin/sleep 10
 ExecStart=/usr/bin/python3 /home/ran/net/server_PV.py
-#WorkingDirectory=/home/pi
+#WorkingDirectory=/home/mosgarage
 StandardOutput=null
 StandardError=journal
 User=ran
