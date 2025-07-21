@@ -1,4 +1,4 @@
-# systemd-service-examples
+# systemd-service-
 
 A crash course for systemd and services, how to create and control them. Very basic usage with links for further reading.
 
@@ -11,13 +11,13 @@ It can be beneficially not to start a server with a CRON tab, because a service 
 A unit file is just plain text defining a service, a mount point or even much more components of your OS.
 
 ```
-sudo systemctl edit --force --full fox4.service
+sudo systemctl edit --force --full mosgarage.service
 ```
 It can be created with a simple oneliner, do note the self explanatory flags. Since we want to run a simple server, we only want to bring it up once the network is ready. This one is sufficient to run my python3 HTTPS and TLS1.3 server.
 
 ```
 [Unit]
-Description=fox4-server
+Description=mosgarage-server
 #Wants=network.target
 After=network.target
 
@@ -41,25 +41,25 @@ WantedBy=multi-user.target
 Afterwards you can enable your new service:
 
 ```
-sudo systemctl enable fox4.service
+sudo systemctl enable mosgarage.service
 ```
 
 and manually bring it up
 
 ```
-sudo systemctl start fox4.service
+sudo systemctl start mosgarage.service
 ```
 
 After these steps it should be running forever. You can check on it like this, sudo may reveal more info than running just as user in some cases:
 ```
-sudo systemctl status fox4.service
+sudo systemctl status mosgarage.service
 ```
 The syntax overall needs not much further explanation:
 ```
-sudo systemctl restart fox4.service
-sudo systemctl stop fox4.service
-sudo systemctl disable fox4.service
-sudo systemctl reload fox4.service
+sudo systemctl restart mosgarage.service
+sudo systemctl stop mosgarage.service
+sudo systemctl disable mosgarage.service
+sudo systemctl reload mosgarage.service
 ```
 Further useful commands are:
 ```
